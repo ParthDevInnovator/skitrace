@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pearl: #F8F7F4;
+  --color-ivory: #FAF9F6;
+  --color-carbon-950: #0E1012;
+  --color-carbon-900: #141618;
+  --color-carbon-800: #1F2226;
+  --color-carbon-700: #2F343B;
+  --color-carbon-600: #4D545D;
+  --color-champagne-100: #FAF5E8;
+  --color-champagne-200: #F4E9CD;
+  --color-champagne-300: #EBD8A8;
+  --color-champagne-400: #DFC07B;
+  --color-champagne-500: #D4AF37;
+  --color-champagne-600: #C5A059;
+  --color-champagne-700: #A4823E;
+  --color-slatehair: #E5E7EB;
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --shadow-sculpt: 0 20px 45px -15px rgba(20, 22, 24, 0.08), 0 0 1px 1px rgba(20, 22, 24, 0.05);
+  --shadow-gold-glow: 0 0 35px -5px rgba(212, 175, 55, 0.22);
+  --shadow-subtle-card: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-jetbrains-mono: 'JetBrains Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #F8F7F4;
+  color: #141618;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+.hairline-border {
+  border-color: rgba(20, 22, 24, 0.08);
+}
+
+.gold-accent-border {
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.glass-nav {
+  background: rgba(248, 247, 244, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+}
+
+.gold-subtle-gradient {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(245, 233, 205, 0.02) 100%);
+}
+
+.sculptural-glow-underlay {
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.16) 0%, rgba(248, 247, 244, 0) 65%);
+}
+
+/* Custom selection style matching Stitch */
+::selection {
+  background-color: #EBD8A8;
+  color: #0E1012;
+}
