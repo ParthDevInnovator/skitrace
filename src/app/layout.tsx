@@ -29,6 +29,17 @@ export const metadata: Metadata = {
     "Provenance",
   ],
   authors: [{ name: "Skitrace Technologies, Inc." }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+      { url: "/images/skitrace-emblem.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", type: "image/png" },
+    ],
+  },
 };
 
 export const viewport = {
