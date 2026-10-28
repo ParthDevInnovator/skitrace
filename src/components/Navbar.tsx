@@ -10,10 +10,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full glass-nav border-b hairline-border transition-all duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
         {/* Brand Logo & Wordmark */}
-        <a aria-label="Skitrace Home" className="flex items-center gap-3.5 group" href="#">
-          <div className="relative w-9 h-9 flex items-center justify-center rounded-lg overflow-hidden shadow-sm transition-transform duration-300 group-hover:scale-105 border border-carbon-900/10 bg-white">
+        <a aria-label="Skitrace Home" className="flex items-center gap-2.5 sm:gap-3.5 group shrink-0" href="#">
+          <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg overflow-hidden shadow-sm transition-transform duration-300 group-hover:scale-105 border border-carbon-900/10 bg-white shrink-0">
             <Image
               alt="Skitrace Sculptural S Emblem"
               className="w-full h-full object-cover scale-110"
@@ -24,9 +24,9 @@ export default function Navbar() {
               unoptimized
             />
           </div>
-          <div className="flex items-baseline tracking-tight font-medium text-carbon-900">
-            <span className="text-2xl font-bold tracking-[-0.04em]">skitrace</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-champagne-500 ml-1"></span>
+          <div className="flex items-baseline tracking-tight font-medium text-carbon-900 shrink-0">
+            <span className="text-xl sm:text-2xl font-bold tracking-[-0.04em]">skitrace</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-champagne-500 ml-1 shrink-0"></span>
           </div>
         </a>
 
@@ -53,9 +53,9 @@ export default function Navbar() {
         </nav>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button
-            className="relative group inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-carbon-950 rounded-full hover:bg-carbon-800 transition-all duration-200 shadow-sm hover:shadow-md border border-carbon-800 cursor-pointer"
+            className="hidden sm:inline-flex relative group items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-carbon-950 rounded-full hover:bg-carbon-800 transition-all duration-200 shadow-sm hover:shadow-md border border-carbon-800 cursor-pointer"
             onClick={openEarlyAccess}
             type="button"
           >
@@ -80,7 +80,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden p-2 rounded-lg text-carbon-700 hover:text-carbon-950 focus:outline-none"
+            className="md:hidden p-2 rounded-lg text-carbon-700 hover:text-carbon-950 hover:bg-carbon-900/5 focus:outline-none transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation"
           >
@@ -140,6 +140,18 @@ export default function Navbar() {
           >
             FAQ
           </a>
+          <div className="pt-3 border-t hairline-border sm:hidden">
+            <button
+              className="w-full inline-flex items-center justify-center px-5 py-3 text-xs font-semibold uppercase tracking-wider text-white bg-carbon-950 rounded-full hover:bg-carbon-800 transition-all duration-200 shadow-sm cursor-pointer"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openEarlyAccess();
+              }}
+              type="button"
+            >
+              Get early access &rarr;
+            </button>
+          </div>
         </div>
       )}
     </header>
