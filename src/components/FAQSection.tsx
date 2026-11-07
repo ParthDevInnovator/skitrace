@@ -9,74 +9,87 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "What if an exceptional candidate worked primarily in closed-source private codebases?",
+    question: "How does Skitrace verify candidate code and claims?",
     answer:
-      'Skitrace explicitly differentiates between "disproven" and "unverified public signal." For candidates with proprietary backgrounds, Skitrace highlights verified system design patents, architecture writeups, and generates tailored interview probe questions so your team can evaluate their work directly during technical rounds.',
+      "Skitrace ingests candidate-authorized repositories, public commits, RFCs, and code contributions. Our engine performs AST syntax tree analysis, authorship attribution checks, and commit timestamp verification to trace exactly who wrote the core logic versus boilerplate or dependencies.",
   },
   {
-    question: "Does Skitrace replace technical screening interviews or coding take-homes?",
+    question: "What repositories and version control systems do you support?",
     answer:
-      "No. Skitrace enhances interviews by grounding them in real work. Rather than asking candidates to invert binary trees in artificial environments, hiring managers use Skitrace to discuss actual architecture decisions and production commits the candidate made.",
+      "We support GitHub, GitLab, Bitbucket, self-hosted Enterprise instances, and public open-source project mirrors. Candidates can securely authorize access through OAuth with read-only scopes.",
   },
   {
-    question: "How does Skitrace safeguard candidate privacy and platform compliance?",
+    question: "How do you handle private or proprietary client codebases under NDA?",
     answer:
-      "Skitrace only parses candidate-authorized accounts or publicly accessible developer contributions. All data complies with GDPR, SOC 2, and CCPA specifications. We never sell candidate telemetry to third-party data brokers.",
+      "We strictly respect IP confidentiality. Skitrace never stores private source code. For proprietary enterprise backgrounds, we calculate zero-knowledge AST diff signatures locally, analyze architecture system designs, and generate targeted technical probe questions for interviewers rather than exposing proprietary IP.",
+  },
+  {
+    question: "Does Skitrace replace technical screening interviews or live rounds?",
+    answer:
+      "No. Skitrace replaces arbitrary whiteboard LeetCode puzzles with real architectural discussions. By reviewing the candidate's verified proof dossier beforehand, hiring managers can spend technical rounds diving deep into real trade-offs and system decisions.",
+  },
+  {
+    question: "How does this integrate with our existing ATS (Greenhouse, Ashby, Lever)?",
+    answer:
+      "Skitrace integrates seamlessly with leading ATS platforms including Greenhouse, Ashby, and Lever. Once a candidate submits their proof profile or authorized handles, a verified evidence report is attached directly to their ATS candidate profile.",
+  },
+  {
+    question: "Is candidate consent required, and how do you comply with GDPR?",
+    answer:
+      "Yes. Candidate consent is fundamental. Candidates explicitly choose which accounts and portfolios to connect, can preview their own evidence dossier, and have full rights to redact or revoke data under GDPR and CCPA standards.",
   },
 ];
 
 export default function FAQSection() {
-  const [openIndices, setOpenIndices] = useState<number[]>([0, 1, 2]);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
-    if (openIndices.includes(index)) {
-      setOpenIndices(openIndices.filter((i) => i !== index));
-    } else {
-      setOpenIndices([...openIndices, index]);
-    }
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="py-24 bg-pearl" id="faq">
+    <section className="py-24 bg-white border-y hairline-border" id="faq">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-xs font-semibold tracking-widest uppercase text-champagne-600 mb-2 block">
+          <span className="text-[11px] font-semibold tracking-widest uppercase text-champagne-600 mb-2 block">
             Questions &amp; Answers
           </span>
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-carbon-950">
+          <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-carbon-950">
             Frequently Asked Questions
           </h2>
+          <p className="mt-3 text-carbon-600 text-sm sm:text-base">
+            Everything you need to know about proof-driven technical hiring.
+          </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3.5">
           {faqs.map((faq, index) => {
-            const isOpen = openIndices.includes(index);
+            const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className="rounded-xl bg-white border hairline-border p-6 shadow-subtle-card transition-all"
+                className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                  isOpen ? "bg-[#FAF8F5] border-carbon-300 shadow-xs" : "bg-white hairline-border hover:border-carbon-300"
+                }`}
               >
                 <button
-                  className="w-full flex items-center justify-between text-left group cursor-pointer"
+                  className="w-full flex items-center justify-between text-left p-6 cursor-pointer"
                   onClick={() => toggleFAQ(index)}
                   type="button"
                 >
-                  <h3 className="text-base font-semibold text-carbon-950 pr-4">{faq.question}</h3>
-                  <span className="shrink-0 text-carbon-500 group-hover:text-carbon-900 transition-transform">
-                    <svg
-                      className={`w-4 h-4 transform transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                    </svg>
-                  </span>
+                  <h3 className="text-sm sm:text-base font-semibold text-carbon-950 pr-4">{faq.question}</h3>
+                  <div
+                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-xs transition-transform duration-200 ${
+                      isOpen ? "bg-carbon-950 text-white" : "bg-[#FAF8F5] text-carbon-700 border hairline-border"
+                    }`}
+                  >
+                    {isOpen ? "−" : "+"}
+                  </div>
                 </button>
                 {isOpen && (
-                  <p className="mt-3 text-sm text-carbon-600 leading-relaxed pt-2 border-t hairline-border">
+                  <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-carbon-600 leading-relaxed border-t hairline-border">
                     {faq.answer}
-                  </p>
+                  </div>
                 )}
               </div>
             );

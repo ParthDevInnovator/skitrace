@@ -4,115 +4,164 @@ import React from "react";
 
 export default function ProblemSection() {
   return (
-    <section className="py-24 bg-white border-y hairline-border" id="problem">
+    <section className="py-24 bg-[#FAF8F5] relative" id="the-gap">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <span className="text-xs font-semibold tracking-widest uppercase text-champagne-600 mb-2 block">
-            The Fundamental Disconnect
+          <span className="text-[11px] font-semibold tracking-widest uppercase text-champagne-600 mb-3 block">
+            The Evaluation Gap
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-carbon-950 leading-tight">
-            A resume is a self-reported claim.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-carbon-950 leading-tight">
+            A Resume Tells One Story.
             <br />
-            Engineering requires real evidence.
+            <span className="font-editorial italic text-[#B27F33]">Proof Gives The Complete Picture.</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-carbon-600">
-            For decades, hiring pipelines have relied on polished bullet points and keyword stuffing. Skitrace connects
-            candidate claims directly to tangible output: commit histories, technical architectures, and transparent
-            benchmarks.
+          <p className="mt-4 text-base sm:text-lg text-carbon-600 leading-relaxed">
+            Hiring pipelines have relied on polished PDFs, buzzwords, and rehearsed stories. Skitrace traces candidate
+            claims directly to tangible output: commit histories, technical architectures, and transparent benchmarks.
           </p>
         </div>
 
-        {/* Side-by-Side Comparison */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-          {/* Side 1: The Traditional Resume */}
-          <div className="rounded-2xl p-8 bg-pearl/70 border hairline-border flex flex-col justify-between">
+        {/* 3 Distinct Pillar Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+          {/* Card 1: The Traditional Resume Claim (Light White Card) */}
+          <div className="bg-white rounded-2xl p-7 border hairline-border shadow-elevation flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between pb-6 border-b hairline-border mb-6">
-                <span className="text-xs font-mono-code uppercase text-carbon-600 font-semibold tracking-wider">
-                  Traditional Resume Bullet
+              <div className="flex items-center justify-between pb-4 border-b hairline-border mb-5">
+                <span className="text-[11px] font-mono-code uppercase text-carbon-500 font-semibold tracking-wider">
+                  Traditional Resume
                 </span>
-                <span className="text-xs px-2.5 py-1 rounded bg-red-50 text-red-700 border border-red-200 font-medium">
-                  Unverifiable text
+                <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-red-50 text-red-700 border border-red-200/60 font-semibold uppercase tracking-wider">
+                  Unverified Claim
                 </span>
               </div>
+
               <div className="space-y-4">
-                <p className="text-base text-carbon-900 font-serif italic border-l-2 border-carbon-300 pl-4 py-1">
-                  &ldquo;Architected and deployed high-throughput real-time streaming pipeline processing over 250,000
-                  events per second with 99.99% fault tolerance.&rdquo;
-                </p>
-                <div className="text-xs text-carbon-600 space-y-2 pt-2">
-                  <p className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                    </svg>
-                    Did they write the engine, or just configure a dashboard?
+                <div className="bg-[#FAF8F5] rounded-xl p-4 border hairline-border">
+                  <p className="text-sm text-carbon-900 font-serif italic leading-relaxed">
+                    &ldquo;Architected and deployed high-throughput real-time streaming pipeline processing over 250,000
+                    events per second with 99.99% fault tolerance.&rdquo;
                   </p>
-                  <p className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                    </svg>
-                    No access to architecture, partition strategies, or failure modes.
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                    </svg>
-                    Subject to subjective resume embellishment.
-                  </p>
+                </div>
+
+                <div className="text-xs text-carbon-600 space-y-2.5 pt-2">
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-red-500 font-bold shrink-0">✕</span>
+                    <span>No proof of whether they authored the engine or merely tweaked config.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-red-500 font-bold shrink-0">✕</span>
+                    <span>No visibility into failure modes, partition rebalancing, or test rigor.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-red-500 font-bold shrink-0">✕</span>
+                    <span>Forces interviewers into subjective guesswork and algorithmic trivia.</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="mt-8 pt-4 border-t hairline-border text-xs text-carbon-600 font-mono-code">
-              Status: Ambiguous claim without primary ground truth
+
+            <div className="mt-8 pt-4 border-t hairline-border text-[11px] text-carbon-400 font-mono-code flex items-center justify-between">
+              <span>Risk: Embellishment</span>
+              <span className="text-red-600 font-semibold">High Ambiguity</span>
             </div>
           </div>
 
-          {/* Side 2: Skilltrace Evidentiary View */}
-          <div className="rounded-2xl p-8 bg-carbon-950 text-white border border-carbon-800 shadow-xl flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute -right-12 -top-12 w-48 h-48 bg-champagne-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          {/* Card 2: The Skitrace Proof Engine (Dark Charcoal Card with Gold Accents) */}
+          <div className="bg-carbon-950 text-white rounded-2xl p-7 border border-carbon-800 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute -right-8 -top-8 w-40 h-40 bg-champagne-500/15 rounded-full blur-2xl pointer-events-none"></div>
+
             <div>
-              <div className="flex items-center justify-between pb-6 border-b border-carbon-800 mb-6">
-                <span className="text-xs font-mono-code uppercase text-champagne-400 font-semibold tracking-wider">
-                  Skitrace Verification Trace
+              <div className="flex items-center justify-between pb-4 border-b border-carbon-800/80 mb-5">
+                <span className="text-[11px] font-mono-code uppercase text-champagne-400 font-semibold tracking-wider">
+                  Skitrace Proof Trace
                 </span>
-                <span className="text-xs px-2.5 py-1 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800 font-medium">
+                <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-800 font-semibold uppercase tracking-wider">
                   Trace Confirmed
                 </span>
               </div>
+
               <div className="space-y-4">
-                <div className="bg-carbon-900 rounded-xl p-4 border border-carbon-800 space-y-2">
+                <div className="flex items-baseline justify-between">
+                  <span className="text-xs text-carbon-400">Verified Evidence Score</span>
+                  <span className="text-2xl font-bold font-mono-code text-champagne-300">96 / 100</span>
+                </div>
+
+                <div className="bg-carbon-900 rounded-xl p-4 border border-carbon-800 space-y-2.5">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-champagne-300 font-mono-code font-medium">
-                      Pipeline: Apache Kafka / Flink Engine
-                    </span>
-                    <span className="text-carbon-600 font-mono-code">SHA: e8f901a</span>
+                    <span className="text-white font-mono-code font-semibold">partitioner.go</span>
+                    <span className="text-carbon-400 font-mono-code text-[11px]">1,820 LoC</span>
                   </div>
-                  <p className="text-xs text-carbon-300">
-                    Candidate authored exact partition allocation rebalancer (
-                    <span className="font-mono-code text-white">partitioner.go</span>) with integrated backpressure
-                    triggers.
+                  <p className="text-xs text-carbon-300 leading-relaxed">
+                    Candidate authored exact partition allocation rebalancer with integrated backpressure triggers.
                   </p>
-                  <div className="flex items-center gap-4 text-[11px] font-mono-code text-carbon-600 pt-2 border-t border-carbon-800/60">
-                    <span>42 PR reviews completed</span>
+                  <div className="flex items-center gap-3 text-[11px] font-mono-code text-champagne-400 pt-1">
+                    <span>✓ Solo Committer</span>
                     <span>•</span>
-                    <span>1,820 lines of Go</span>
+                    <span>✓ PR #402 Merged</span>
                   </div>
                 </div>
-                <div className="p-3 bg-emerald-950/30 rounded-lg border border-emerald-800/40 text-xs text-emerald-300 flex items-center gap-2.5">
-                  <svg className="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      clipRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      fillRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Empirical evidence confirms direct ownership and authoring of core stream topology.</span>
+
+                <div className="bg-carbon-900/60 rounded-xl p-3 border border-carbon-800/60 text-xs text-carbon-300 space-y-1">
+                  <div className="flex justify-between text-[11px]">
+                    <span className="text-carbon-400">Micro-benchmark</span>
+                    <span className="text-emerald-400 font-mono-code">+42% throughput</span>
+                  </div>
+                  <div className="flex justify-between text-[11px]">
+                    <span className="text-carbon-400">AST Authorship</span>
+                    <span className="text-white font-mono-code">98.4% Confidence</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="mt-8 pt-4 border-t border-carbon-800 text-xs text-carbon-600 font-mono-code flex items-center justify-between">
-              <span>Auditable primary artifacts attached</span>
-              <span className="text-champagne-400">100% Provenance</span>
+
+            <div className="mt-8 pt-4 border-t border-carbon-800/80 text-[11px] text-champagne-300/80 font-mono-code flex items-center justify-between">
+              <span>Cryptographic Proof</span>
+              <span className="text-emerald-400 font-semibold">100% Audited</span>
+            </div>
+          </div>
+
+          {/* Card 3: The Hiring Outcome (Warm Champagne / Ivory Card) */}
+          <div className="bg-[#FAF5E8] rounded-2xl p-7 border border-champagne-300/60 shadow-elevation flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between pb-4 border-b border-champagne-300/60 mb-5">
+                <span className="text-[11px] font-mono-code uppercase text-champagne-700 font-semibold tracking-wider">
+                  The Decision
+                </span>
+                <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-white text-champagne-800 border border-champagne-300 font-semibold uppercase tracking-wider">
+                  High Conviction
+                </span>
+              </div>
+
+              <div className="space-y-4">
+                <div className="bg-white/80 rounded-xl p-4 border border-champagne-200">
+                  <h3 className="text-base font-semibold text-carbon-950">Offer extended in 48 hours</h3>
+                  <p className="text-xs text-carbon-600 mt-1 leading-relaxed">
+                    Hiring managers cut 4 redundant interview rounds. Every team member reviewed the actual code
+                    dossier beforehand.
+                  </p>
+                </div>
+
+                <div className="space-y-2.5 text-xs text-carbon-700 pt-1">
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-emerald-600 font-bold shrink-0">✓</span>
+                    <span>100% engineering leadership alignment without gut-feeling debates.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-emerald-600 font-bold shrink-0">✓</span>
+                    <span>Architecture deep-dive replaced arbitrary whiteboard coding tests.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-emerald-600 font-bold shrink-0">✓</span>
+                    <span>Candidate felt respected and accepted the offer on day 3.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-4 border-t border-champagne-300/60 text-[11px] text-champagne-800 font-mono-code flex items-center justify-between">
+              <span>Interview Cycle</span>
+              <span className="font-semibold text-carbon-950">3 Days (-75%)</span>
             </div>
           </div>
         </div>
