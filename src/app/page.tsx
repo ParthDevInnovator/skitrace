@@ -1,11 +1,15 @@
 import { ModalProvider } from "@/components/ModalContext";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import LogoMarquee from "@/components/LogoMarquee";
 import ProblemSection from "@/components/ProblemSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
+import WhySkitraceSection from "@/components/WhySkitraceSection";
+import SearchProofSection from "@/components/SearchProofSection";
 import EvidencePreviewSection from "@/components/EvidencePreviewSection";
-import PersonaRolesSection from "@/components/PersonaRolesSection";
-import TrustSection from "@/components/TrustSection";
+import DarkStakeholdersSection from "@/components/DarkStakeholdersSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ComparisonSection from "@/components/ComparisonSection";
+import AIProofSection from "@/components/AIProofSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -17,11 +21,15 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <LogoMarquee />
         <ProblemSection />
-        <HowItWorksSection />
+        <WhySkitraceSection />
+        <SearchProofSection />
         <EvidencePreviewSection />
-        <PersonaRolesSection />
-        <TrustSection />
+        <DarkStakeholdersSection />
+        <TestimonialsSection />
+        <ComparisonSection />
+        <AIProofSection />
         <FAQSection />
         <CTASection />
       </main>

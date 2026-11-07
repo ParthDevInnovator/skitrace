@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,17 +16,25 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Skitrace — Beyond the resume. Discover the proof.",
+  title: "Skitrace — A Resume Tells You What They Claim. Discover What They Can Prove.",
   description:
-    "Discover the evidence behind a candidate's skills, experience, and professional work — consolidated, traced to primary source code, and verified in one place.",
+    "Verify technical competence with real work artifacts, code proof, and verified portfolio traces before you make an offer.",
   keywords: [
     "Skitrace",
     "Candidate Intelligence",
     "Engineering Hiring",
     "Code Verification",
     "Technical Recruitment",
-    "Provenance",
+    "Proof-Driven Hiring",
   ],
   authors: [{ name: "Skitrace Technologies, Inc." }],
   icons: {
@@ -36,9 +44,7 @@ export const metadata: Metadata = {
       { url: "/images/skitrace-emblem.png", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
-    apple: [
-      { url: "/apple-icon.png", type: "image/png" },
-    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
   },
 };
 
@@ -53,8 +59,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-pearl text-carbon-900 selection:bg-champagne-300 selection:text-carbon-950 font-sans antialiased">
+    <html
+      lang="en"
+      className={`${inter.variable} ${jetbrainsMono.variable} ${newsreader.variable} scroll-smooth`}
+    >
+      <body className="min-h-screen bg-[#FAF8F5] text-carbon-900 selection:bg-champagne-300 selection:text-carbon-950 font-sans antialiased">
         {children}
       </body>
     </html>
